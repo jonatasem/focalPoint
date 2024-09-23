@@ -89,8 +89,8 @@ export default function TodoList({
             <h2>Deletar tarefa</h2>
             <p>Tem certeza que você deseja deletar essa tarefa?</p>
             <div className='confirmButtons'>
-              <button className='btnCancel' onClick={confirmDelete}>Confirmar</button>
-              <button className='btnDelete' onClick={cancelDelete}>Cancelar</button>
+              <button className='btnCancel' onClick={cancelDelete}>Cancelar</button>
+              <button className='btnDelete' onClick={confirmDelete}>Excluir</button>
             </div>
           </article>
         </section>
