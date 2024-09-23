@@ -1,0 +1,315 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.containerBody {
+  max-width: 1440px;
+  margin: 0 auto;
+  font-family: Arial, Helvetica, sans-serif;
+  position: relative;
+
+  // Estilos para o cabeçalho
+  .containerHeader {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid silver;
+    margin: 0 2.5rem 4.5rem;
+
+    h2 {
+      font-weight: 500;
+    }
+
+    p {
+      color: #0000008A;
+      padding-top: 0.5rem;
+    }
+  }
+
+  // Estilos para a lista de tarefas
+  .toDoList {
+    max-width: 450px;
+    margin: 2.5rem auto;
+    text-align: center;
+    border: 1px solid #EAECF0;
+    padding: 1.5rem 0;
+    border-radius: 1rem;
+
+    h2 {
+      font-size: 16px;
+      font-weight: 400;
+      color: #0000008A;
+      margin-bottom: 2rem;
+    }
+
+    .taskNone {
+      color: silver;
+    }
+
+    // Estilos para cada tarefa
+    .cardTask {
+      display: flex;
+      justify-content: space-between;
+      max-width: 300px;
+      margin: 0 auto 1.5rem;
+      border: 1px dotted silver;
+      padding: 0.5rem;
+      border-radius: 8px;
+
+      div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      input {
+        width: 24px;
+        height: 24px;
+        cursor: pointer;
+      }
+
+      span {
+        margin: 0 1rem;
+        font-size: 16px;
+        text-align: start;
+      }
+
+      button {
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+      }
+
+      .listCompleted {
+        text-decoration: line-through;
+        color: #0000008A;
+      }
+    }
+
+    .cardTask:hover {
+      background: #F7F9FD;
+    }
+  }
+
+  // Botão para adicionar nova tarefa
+  .containerButton {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+
+    .newTaskBtn {
+      background-image: linear-gradient(to right, #0796D3, #53C0F0);
+      width: 450px;
+      height: 51px;
+      border-radius: 8px;
+      outline: 0;
+      border: none;
+      font-size: 16px;
+      color: white;
+      cursor: pointer;
+    }
+  }
+
+  // Estilos para tarefas concluídas
+  .taskCompleted {
+    h2 {
+      margin-top: 2.5rem;
+    }
+  }
+
+  // Estilos para o painel de nova tarefa
+  .formNewTask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background-color: rgba(255, 255, 255, 0.8);
+
+    .newTaskAdd {
+      display: flex;
+      flex-direction: column;
+      max-width: 450px;
+      max-height: 286px;
+      justify-content: center;
+      border-radius: 1rem;
+      margin: 10% auto;
+      background-color: white;
+      box-shadow: 1px 1px 50px silver;
+
+      h2, input {
+        margin: 1.5rem;
+      }
+
+      label {
+        margin-left: 1.5rem;
+      }
+
+      h2 {
+        margin-bottom: 1.5rem;
+        font-weight: 400;
+        font-size: 24px;
+      }
+
+      label {
+        font-size: 16px;
+      }
+
+      input {
+        padding: 1rem;
+        font-size: 16px;
+        outline: 0;
+        border-radius: 0.5rem;
+        border: 1px solid silver;
+        margin-top: 0.5rem;
+      }
+
+      .containerBtnTask {
+        display: flex;
+        justify-content: space-around;
+        padding: 0 1.5rem 1rem;
+
+        button {
+          width: 48%;
+          border-radius: 0.5rem;
+          border: 1px solid silver;
+          padding: 1rem 0;
+          margin-bottom: 1rem;
+          font-size: 16px;
+          cursor: pointer;
+        }
+
+        .btnCancel {
+          background: #E7EEFB;
+        }
+
+        .btnAdd {
+          background-image: linear-gradient(to right, #0796D3, #53C0F0, #0796D3);
+          color: white;
+        }
+      }      
+    }
+  }
+
+  // Estilos para o painel de confirmação de exclusão
+  .confirmDeletePanel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background-color: rgba(255, 255, 255, 0.8);
+
+    .deleteConfig {
+      display: flex;
+      flex-direction: column;
+      max-width: 450px;
+      justify-content: center;
+      border-radius: 1rem;
+      margin: 10% auto;
+      background-color: white;
+      box-shadow: 1px 1px 50px silver;
+
+      h2 {
+        font-weight: 400;
+      }
+
+      h2, div {
+        margin: 1.5rem;
+      }
+
+      p {
+        margin-left: 1.5rem;
+        color: #0000008A;
+      }
+
+      .confirmButtons {
+        display: flex;
+        justify-content: space-between;
+
+        button {
+          width: 48%;
+          border-radius: 0.5rem;
+          border: none;
+          padding: 1rem 0;
+          font-size: 16px;
+          cursor: pointer;
+        }
+
+        .btnDelete {
+          background-image: linear-gradient(to right, #D30707, #F05353, #D30707);
+          color: white;
+        }
+      }
+    }
+  }
+
+  // Media Queries para responsividade
+  @media(max-width: 900px) {
+    .containerHeader {
+      flex-wrap: wrap;
+    }
+  }
+  
+  @media(max-width: 768px) {
+    .containerHeader {
+      padding: 1rem;
+      margin: 0 1.5rem;
+    }
+  }
+  
+  @media(max-width: 500px) {
+
+    .toDoList {
+      margin: 1.5rem;
+
+    }
+
+    .containerButton {
+      width: 90%;
+      margin: 1.5rem auto;
+    }
+  }
+
+  @media(max-width:560px){
+    .formNewTask {
+      background-color: white;
+
+      .newTaskAdd {
+        box-shadow: none;
+
+        .containerBtnTask {
+          flex-direction: column;
+
+          button {
+            width: 100%;
+          }
+        }
+      }
+    }
+
+    .confirmDeletePanel {
+      background-color: white;
+
+      .deleteConfig {
+        box-shadow: none;
+
+        .confirmButtons {
+          flex-direction: column;
+
+          button {
+            width: 100%;
+          }
+
+          .btnDelete {
+            margin-top: 1.5rem;
+          }
+        }
+      }
+    }
+
+  }
+}
